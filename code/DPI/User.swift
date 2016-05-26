@@ -53,9 +53,7 @@ extension User {
 private extension User {
   
   func fetch() {
-    onMainQueue {
-      Network.notifications(for: self).forEach { self.receive(notification: $0.0, forTopic: $0.1) }
-    }
+    Network.notifications(for: self)
   }
 }
 

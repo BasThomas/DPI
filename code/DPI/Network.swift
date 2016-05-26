@@ -22,13 +22,10 @@ enum Network {
     storedNotifications[notification] = nil
   }
   
-  static func notifications(`for` user: User) -> [(Notification, Bool)] {
+  static func notifications(`for` user: User) {
     let notifications = storedNotifications
       .filter { _, value in value.user == user }
-      .map { ($0.0, $0.1.forTopic) }
-    
     defer { notifications.forEach { Network.remove(notification: $0.0) } }
-    
-    return notifications
+    notifications.forEach { user.receive(notification: $0.0, forTopic: $0.1.forTopic) }
   }
 }
