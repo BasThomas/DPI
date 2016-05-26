@@ -21,6 +21,7 @@ extension Printer {
         .forEach { $0.receive(notification: notification) }
       
       allUsers
+        .filter { !users.contains($0) }
         .filter { $0.online }
         .filter { $0.subscriptions.contains(notification.topic) || $0.subscriptions.contains(.all) }
         .forEach { $0.receive(notification: notification, forTopic: true) }
@@ -30,6 +31,7 @@ extension Printer {
         .forEach { Network.store(notification: notification, for: $0) }
       
       allUsers
+        .filter { !users.contains($0) }
         .filter { !$0.online }
         .filter { $0.subscriptions.contains(notification.topic) || $0.subscriptions.contains(.all) }
         .forEach { Network.store(notification: notification, for: $0, forTopic: true) }
