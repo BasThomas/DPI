@@ -57,7 +57,12 @@ private extension User {
   }
 }
 
-extension User: Equatable { }
+extension User: Hashable {
+  
+  public var hashValue: Int {
+    return self.id.hashValue ^ self.name.hashValue
+  }
+}
 
 public func ==(lhs: User, rhs: User) -> Bool {
   return lhs.id == rhs.id
