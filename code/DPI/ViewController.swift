@@ -13,7 +13,11 @@ private let printer = Printer()
 
 class ViewController: UIViewController {
   
-  @IBOutlet weak var notificationPicker: UIPickerView!
+  @IBOutlet weak var notificationPicker: UIPickerView! {
+    didSet {
+      notificationPicker.selectRow(2, inComponent: 0, animated: true)
+    }
+  }
   @IBOutlet weak var notificationMessage: UITextField!
   
   override func viewDidLoad() {
