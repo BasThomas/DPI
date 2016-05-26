@@ -77,7 +77,7 @@
             </objects>
             <point key="canvasLocation" x="690" y="-106"/>
         </scene>
-        <!--View Controller-->
+        <!--Printer-->
         <scene sceneID="atX-TU-B0a">
             <objects>
                 <viewController id="Urz-Wx-0qA" customClass="ViewController" customModule="DPI" customModuleProvider="target" sceneMemberID="viewController">
@@ -125,7 +125,7 @@
                             <constraint firstItem="8Pg-Kp-Nh2" firstAttribute="leading" secondItem="v2U-Fr-EC1" secondAttribute="leading" id="xdi-d8-abr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dci-v2-KS0"/>
+                    <navigationItem key="navigationItem" title="Printer" id="dci-v2-KS0"/>
                     <connections>
                         <outlet property="notificationMessage" destination="Alh-Ch-r9Z" id="wMW-13-fYD"/>
                         <outlet property="notificationPicker" destination="8Pg-Kp-Nh2" id="GSh-ur-jIe"/>
