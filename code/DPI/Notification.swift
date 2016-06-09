@@ -9,8 +9,14 @@
 import Foundation
 
 struct Notification {
+  let timestamp = NSDate()
   let topic: Topic
   let message: String
+  
+  init(topic: Topic, message: String) {
+    self.topic = topic
+    self.message = message
+  }
 }
 
 extension Notification: CustomStringConvertible {
@@ -28,5 +34,5 @@ extension Notification: Hashable {
 }
 
 func ==(lhs: Notification, rhs: Notification) -> Bool {
-  return lhs.topic == rhs.topic && lhs.message == rhs.message
+  return lhs.timestamp == rhs.timestamp && lhs.topic == rhs.topic && lhs.message == rhs.message
 }
